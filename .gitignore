@@ -1,0 +1,4 @@
+
+django_app/db.sqlite3
+*.pyc
+/venv
