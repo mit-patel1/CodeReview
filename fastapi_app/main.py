@@ -33,7 +33,7 @@ async def start_task_endpoint(task_request: AnalyzePRRequest):
         task_id = response.json().get("task_id")
         return {"task_id": task_id, "status": "Task started"}
 
-@app.get("/task_status/{task_id}/")
+@app.get("/task_status_view/{task_id}/")
 async def task_status_endpoint(task_id: str):
     """
     Check the status of the task by making a request to Django.
