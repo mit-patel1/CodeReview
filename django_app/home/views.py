@@ -19,7 +19,7 @@ def start_task(request):
 
 
             task = analyze_repo_task.delay(repo_url, pr_number, github_token)
-           
+
             # Return the task ID to the client (this can be used to check the task status)
             return JsonResponse({"task_id": task.id, "status": "Task started"})
         except Exception as e:
@@ -42,3 +42,9 @@ def task_status_view(request, task_id):
         response_data['error'] = str(result.result)
 
     return JsonResponse(response_data)
+
+
+def test(request):
+    print('This is a test function')
+
+    return {"msg":1, "response":"Test pr request."}
